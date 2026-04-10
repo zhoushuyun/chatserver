@@ -1,0 +1,5 @@
+socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_TCP) = 6
+setsockopt(6, SOL_SOCKET, SO_REUSEADDR, [1], 4) = 0
+setsockopt(6, SOL_SOCKET, SO_REUSEPORT, [0], 4) = 0
+bind(6, {sa_family=AF_INET, sin_port=htons(127), sin_addr=inet_addr("0.0.0.0")}, 28) = 0
+listen(6, 4096)                         = 0
