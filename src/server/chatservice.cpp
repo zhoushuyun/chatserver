@@ -188,11 +188,13 @@ void Chatservice::reg(const TcpConnectionPtr&conn,json &js,Timestamp time){
         response["msgid"] = REG_MSG_ACK; 
         response["errno"] = 0; // 业务成功
         response["id"] = user.getId(); // 用户id
+        response["name"] = user.getName();
         conn->send(response.dump()); // 网络模块发送给客户端的响应，告诉客户端业务处理的结果（成功/失败）。
     }else{ // 注册失败
         json response;
         response["msgid"] = REG_MSG_ACK; 
         response["errno"] = 1; // 业务失败 不需要id
+        response["name"] = user.getName();
         conn->send(response.dump()); // 网络模块发送给客户端的响应，告诉客户端业务处理的结果（成功/失败）。
     }
     
